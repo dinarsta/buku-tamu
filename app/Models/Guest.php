@@ -10,6 +10,6 @@ class Guest extends Model
     use HasFactory;
 
     // Tentukan fields yang dapat diisi
-    protected $fillable = ['name', 'email', 'phone', 'address', 'message'];
+    protected $fillable = ['name', 'email', 'phone', 'address','instansi', 'message'];
 }
 

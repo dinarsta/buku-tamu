@@ -17,7 +17,7 @@ class GuestController extends Controller
     // Menyimpan data buku tamu
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
+        $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:15',
@@ -25,10 +25,14 @@ class GuestController extends Controller
             'message' => 'nullable|string',
         ]);
 
-        Guest::create($validatedData);
+        // Simpan data buku tamu ke database (misalnya)
+        Guest::create($request->all());
 
-        return redirect()->route('create')->with('success', 'Terima kasih sudah mengisi buku tamu!');
+        // Kirim pesan sukses
+        return redirect()->back()->with('success', 'Thank you for your response!');
+
     }
+
 
     // Menampilkan daftar tamu
     public function index()
