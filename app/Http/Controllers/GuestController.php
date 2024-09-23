@@ -29,15 +29,6 @@ class GuestController extends Controller
         Guest::create($request->all());
 
         // Kirim pesan sukses
-        return redirect()->back()->with('success', 'Thank you for your response!');
-
-    }
-
-
-    // Menampilkan daftar tamu
-    public function index()
-    {
-        $guests = Guest::all();
-        return view('index', compact('guests'));
+        return redirect()->back()->with('success', 'Data Berhasil Dikirim!');
     }
 }

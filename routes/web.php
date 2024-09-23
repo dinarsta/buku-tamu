@@ -15,10 +15,10 @@ use App\Http\Controllers\GuestController;
 */
 
 Route::get('/', function () {
-    return view('landing');
+    return view('/create');
 });
 
 
 Route::get('/buku-tamu', [GuestController::class, 'create'])->name('create');
 Route::post('/buku-tamu', [GuestController::class, 'store'])->name('guestbook.store');
-Route::get('/daftar-tamu', [GuestController::class, 'index'])->name('guestbook.index');
+
