@@ -20,27 +20,39 @@
         body {
             font-family: 'Poppins', sans-serif;
         }
+
+        /* Background Image */
+        .bg-custom {
+            background-image: url('path_to_your_background_image.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Custom Styles */
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 
-<body class="bg-gradient-to-r from-[#F9F5FF] to-[#EFE0F9] text-gray-900">
+<body class="bg-custom text-gray-900">
 
-    <header class="bg-white shadow-md py-6">
+    <header class="bg-white bg-opacity-80 shadow-md py-6 backdrop-blur-md">
         <div class="container mx-auto">
-            <img src="{{ asset('logo.png') }}" alt="Logo Perusahaan" class="mx-auto h-12">
+            <img src="{{ asset('logo.png') }}" alt="Logo Perusahaan" class="mx-auto h-14">
         </div>
     </header>
 
     <div class="container mx-auto my-12">
         <div class="flex justify-center">
-            <div
-                class="w-full max-w-2xl bg-white shadow-lg rounded-xl p-8 transform transition duration-500 hover:scale-105">
-                <h1 class="mb-5 text-center text-2xl font-semibold text-[#2E073F]">BUKU TAMU PRIMANUSA MUKTI UTAMA</h1>
+            <div class="w-full max-w-2xl bg-white bg-opacity-90 shadow-xl rounded-3xl p-8 transform transition-all duration-500 hover:scale-105 card-hover">
+                <h1 class="mb-5 text-center text-3xl font-bold text-[#2E073F]">BUKU TAMU PRIMANUSA MUKTI UTAMA</h1>
 
                 <!-- Notification Success -->
                 <!-- Error Validation -->
                 @if ($errors->any())
-                    <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6">
+                    <div class="border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6">
                         <ul>
                             @foreach ($errors->all() as $error)
                                 <li>{{ $error }}</li>
@@ -103,27 +115,22 @@
                     </button>
                 </form>
 
-
                 <!-- Modal -->
-                <div id="successModal"
-                    class="fixed inset-0 bg-black bg-opacity-50 hidden flex justify-center items-center z-50">
+                <div id="successModal" class="fixed inset-0 bg-gray-500 bg-opacity-50 hidden flex justify-center items-center z-50 rounded-lg">
                     <div class="bg-white rounded-lg p-6 w-full max-w-xs md:max-w-md lg:max-w-lg mx-4 relative">
-                        <!-- Close Icon -->
                         <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
-                            <span class="text-2xl">&times;</span> <!-- Unicode Close (X) Icon -->
+                            <span class="text-2xl">&times;</span>
                         </button>
 
-                        <!-- Success Icon -->
                         <div class="flex justify-center mb-4">
                             <div class="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center">
-                                <span class="text-white text-3xl">&#10003;</span> <!-- Unicode Checkmark Icon -->
+                                <span class="text-white text-3xl">&#10003;</span>
                             </div>
                         </div>
 
-                        <h2 class="text-lg font-semibold text-[#2E073F] text-center">Thank you ! </h2>
+                        <h2 class="text-lg font-semibold text-[#2E073F] text-center">Thank you!</h2>
                         <p class="text-gray-700 text-center">Terima kasih telah mengisi buku tamu kami.</p>
-                        <button id="closeModal"
-                            class="mt-4 py-2 px-4 bg-[#2E073F] text-white rounded-lg hover:bg-[#521E6F] mx-auto block">
+                        <button id="closeModal" class="mt-4 py-2 px-4 bg-[#2E073F] text-white rounded-lg hover:bg-[#521E6F] mx-auto block">
                             Tutup
                         </button>
                     </div>
@@ -134,12 +141,10 @@
                         const modal = document.getElementById('successModal');
                         const closeModal = document.querySelectorAll('#closeModal');
 
-                        // Show modal on successful form submission
                         @if (session('success'))
                             modal.classList.remove('hidden');
                         @endif
 
-                        // Close modal on button click
                         closeModal.forEach((button) => {
                             button.addEventListener('click', () => {
                                 modal.classList.add('hidden');
@@ -152,8 +157,10 @@
     </div>
 </body>
 
-<footer class="bg-white text-center py-6">
-    <p class="text-gray-500">&copy; 2024 PT PRIMANUSA MUKTI UTAMA. All Rights Reserved.</p>
+<footer class="bg-white bg-opacity-80 text-center py-6 backdrop-blur-md">
+    <a href="https://www.primanusamuktiutama.com" target="_blank" rel="noopener noreferrer">
+        <p class="text-gray-500">&copy; 2024 PT PRIMANUSA MUKTI UTAMA. All Rights Reserved.</p>
+    </a>
 </footer>
 
 </html>

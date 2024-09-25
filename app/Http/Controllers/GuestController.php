@@ -23,6 +23,7 @@ class GuestController extends Controller
             'phone' => 'nullable|string|max:15',
             'address' => 'nullable|string|max:255',
             'message' => 'nullable|string',
+
         ]);
 
         // Simpan data buku tamu ke database (misalnya)
