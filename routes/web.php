@@ -22,3 +22,5 @@ Route::get('/', function () {
 Route::get('/buku-tamu', [GuestController::class, 'create'])->name('create');
 Route::post('/buku-tamu', [GuestController::class, 'store'])->name('guestbook.store');
 
+Route::get('/table', [GuestController::class, 'table'])->name('table');
+Route::get('/export', [GuestController::class, 'export'])->name('export');

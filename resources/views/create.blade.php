@@ -46,10 +46,7 @@
 
     <div class="container mx-auto my-12">
         <div class="flex justify-center">
-            <div class="w-full max-w-2xl bg-white bg-opacity-90 shadow-xl rounded-3xl p-8 transform transition-all duration-500 hover:scale-105 card-hover">
-                <h1 class="mb-5 text-center text-3xl font-bold text-[#2E073F]">BUKU TAMU PRIMANUSA MUKTI UTAMA</h1>
-
-                <!-- Notification Success -->
+            <div class="w-full max-w-2xl bg-white bg-opacity-90 shadow-xl rounded-3xl p-8">
                 <!-- Error Validation -->
                 @if ($errors->any())
                     <div class="border border-red-400 text-red-700 px-4 py-3 rounded-lg mb-6">
@@ -116,7 +113,7 @@
                 </form>
 
                 <!-- Modal -->
-                <div id="successModal" class="fixed inset-0 bg-gray-500 bg-opacity-50 hidden flex justify-center items-center z-50 rounded-lg">
+                <div id="successModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex justify-center items-center z-50 rounded-lg">
                     <div class="bg-white rounded-lg p-6 w-full max-w-xs md:max-w-md lg:max-w-lg mx-4 relative">
                         <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700">
                             <span class="text-2xl">&times;</span>
